@@ -24,3 +24,8 @@ flux create image policy mystok-gcp-flux-prod \                                 
 --interval=1m \
 --semver=5.0.x \
 --export > ./clusters/my-cluster/mystok-gcp-flux-prod-policy.yaml    
+
+gcloud compute backend-services update k8s-be-31942--4739945ebad3cc4a --session-affinity=CLIENT_IP --global
+
+gcloud compute backend-services update k8s1-4739945e-default-mystok-app-80-34f883e2 --session-affinity=CLIENT_IP --global
+
