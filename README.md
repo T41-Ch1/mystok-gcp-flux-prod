@@ -14,3 +14,13 @@ flux bootstrap github \                                                         
   --token-auth \
   --personal
 
+flux create image repository mystok-gcp-flux-prod \                        ─╯
+--image=dekabitasp/mystok-gcp-app-prod \
+--interval=1m \
+--export > ./clusters/my-cluster/mystok-gcp-flux-prod-registry.yaml
+
+flux create image policy mystok-gcp-flux-prod \                                                                                                             ─╯
+--image-ref=mystok-gcp-flux-prod \
+--interval=1m \
+--semver=5.0.x \
+--export > ./clusters/my-cluster/mystok-gcp-flux-prod-policy.yaml    
