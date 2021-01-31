@@ -16,6 +16,10 @@ flux bootstrap github \
   --path=clusters/my-cluster \
   --token-auth \
   --personal
+
+(作成時のみ)
+flux create kustomization mystok-gcp-flux-prod \\n  --source=flux-system \\n  --path="." \\n  --prune=true \\n  --validation=client \\n  --interval=5m \\n  --export > ./clusters/my-cluster/mystok-gcp-flux-prod-kustomization.yaml
+
 (作成時のみ)
 flux create image repository mystok-gcp-flux-prod \                        ─╯
 --image=dekabitasp/mystok-gcp-app-prod \
@@ -28,6 +32,8 @@ flux create image policy mystok-gcp-flux-prod \                                 
 --interval=1m \
 --semver=5.0.x \
 --export > ./clusters/my-cluster/mystok-gcp-flux-prod-policy.yaml    
+
+You should modify manifest to disable semver and enable alphabetical order
 
 3.
 gcloud compute backend-services update k8s-be-31942--4739945ebad3cc4a --session-affinity=CLIENT_IP --global
