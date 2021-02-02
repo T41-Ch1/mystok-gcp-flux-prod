@@ -52,3 +52,8 @@ gcloud compute forwarding-rules create http-content-rule-prod --address=mystok-g
 
 8.
 gcloud consoleで操作
+
+####################
+To Delete All mcrt
+
+gcloud compute ssl-certificates delete `gcloud compute ssl-certificates list | awk '{print $1}' | awk 'NR%2!=1'`
