@@ -53,6 +53,7 @@ gcloud compute forwarding-rules create http-content-rule-prod --address=mystok-g
 8.
 gcloud consoleで操作
 
+※Httpsリダイレクト用のLoadBalancerは毎回terraformとは別に削除しないとアカン
 ####################
 To Delete All mcrt
 
