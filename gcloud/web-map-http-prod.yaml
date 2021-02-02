@@ -1,5 +1,5 @@
 kind: compute#urlMap
-name: web-map-http
+name: web-map-http-prod
 defaultUrlRedirect:
    redirectResponseCode: MOVED_PERMANENTLY_DEFAULT
    httpsRedirect: True

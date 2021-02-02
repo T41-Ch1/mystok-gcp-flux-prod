@@ -42,13 +42,13 @@ gcloud compute backend-services update k8s-be-31942--4739945ebad3cc4a --session-
 gcloud compute backend-services update k8s1-4739945e-default-mystok-app-80-34f883e2 --session-affinity=CLIENT_IP --global
 
 5.
-gcloud compute url-maps import web-map-http --source ./gcloud/web-map-http.yaml --global
+gcloud compute url-maps import web-map-http-prod --source ./gcloud/web-map-http-prod.yaml --global
 
 6.
- gcloud compute target-http-proxies create http-lb-proxy --url-map=web-map-http --global
+ gcloud compute target-http-proxies create http-lb-proxy-prod --url-map=web-map-http-prod --global
 
 7.
-gcloud compute forwarding-rules create http-content-rule --address=mystok-gcp-ip-prod --global --target-http-proxy=http-lb-proxy --ports=80
+gcloud compute forwarding-rules create http-content-rule-prod --address=mystok-gcp-ip-prod --global --target-http-proxy=http-lb-proxy-prod --ports=80
 
 8.
 gcloud consoleで操作
