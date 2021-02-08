@@ -51,7 +51,7 @@ gcloud compute url-maps import web-map-http-prod --source ./gcloud/web-map-http-
 gcloud compute forwarding-rules create http-content-rule-prod --address=mystok-gcp-ip-prod --global --target-http-proxy=http-lb-proxy-prod --ports=80
 
 8.
-gcloud consoleで操作
+gcloud consoleで操作(Prefix_Redirect => Full_Path_Redirect)
 
 ※Httpsリダイレクト用のLoadBalancerは毎回terraformとは別に削除しないとアカン
 ####################
