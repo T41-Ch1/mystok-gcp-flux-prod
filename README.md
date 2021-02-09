@@ -5,6 +5,7 @@
 
 mcrtとNEGが貯まりすぎてないか確認=>削除
 
+※prodとdevの起動を同時並行で行うとバグる
 1.
 kubesec decrypt kubesec-prod-mystok-gcp-sealedsecret-cert.yaml | k apply -f -
 
