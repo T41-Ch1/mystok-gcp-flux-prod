@@ -1,6 +1,8 @@
 # mystok-gcp-flux-prod
 起動手順:
 
+前回のHTTPリダイレクト用のLoadBalancerが削除されているか確認
+
 1.
 kubesec decrypt kubesec-prod-mystok-gcp-sealedsecret-cert.yaml | k apply -f -
 
