@@ -6,13 +6,13 @@
 mcrtとNEGが貯まりすぎてないか確認=>削除
 
 ※prodとdevの起動を同時並行で行うとバグる
-1.
+1.(startup.sh)
 kubesec decrypt kubesec-prod-mystok-gcp-sealedsecret-cert.yaml | k apply -f -
 
-2.
+2.(startup.sh)
 kubectl apply -f https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.12.6/controller.yaml
 
-3.
+3.(startup.sh)
 flux bootstrap github \
   --components-extra=image-reflector-controller,image-automation-controller \
   --owner=$GITHUB_USER \
@@ -46,13 +46,13 @@ gcloud compute backend-services update k8s-be-31942--4739945ebad3cc4a --session-
 4.
 gcloud compute backend-services update k8s1-4739945e-default-mystok-app-80-34f883e2 --session-affinity=CLIENT_IP --global
 
-5.
+5.(httpRedirect.sh)
 gcloud compute url-maps import web-map-http-prod --source ./gcloud/web-map-http-prod.yaml --global
 
-6.
+6.(httpRedirect.sh)
  gcloud compute target-http-proxies create http-lb-proxy-prod --url-map=web-map-http-prod --global
 
-7.
+7.(httpRedirect.sh)
 gcloud compute forwarding-rules create http-content-rule-prod --address=mystok-gcp-ip-prod --global --target-http-proxy=http-lb-proxy-prod --ports=80
 
 8.
