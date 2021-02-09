@@ -3,6 +3,8 @@
 
 前回のHTTPリダイレクト用のLoadBalancerが削除されているか確認
 
+mcrtとNEGが貯まりすぎてないか確認=>削除
+
 1.
 kubesec decrypt kubesec-prod-mystok-gcp-sealedsecret-cert.yaml | k apply -f -
 
