@@ -1,6 +1,7 @@
 # mystok-gcp-flux-prod
 #Caution:
 #prodとdevを同時に起動しようとするとバグるので、prod起動次第devを起動する
+#gcloud config configulations activateで切り替えが必要かも
 
 起動手順:
 
