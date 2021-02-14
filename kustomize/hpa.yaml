@@ -1,0 +1,6 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: mystok-gcp-hpa
+spec:
+  minReplicas: 6

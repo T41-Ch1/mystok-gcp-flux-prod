@@ -19,6 +19,10 @@ patches:
     kind: Deployment
     name: mystok-gcp-deploy
   path: ./kustomize/ref_secret_name.yaml
+- target:
+    kind: HorizontalPodAutoscaler
+    name: mystok-gcp-hpa
+  path: ./kustomize/hpa.yaml
 images:
 - name: dekabitasp/mystok-gcp-app-prod
   newName: dekabitasp/mystok-gcp-app-prod
