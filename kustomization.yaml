@@ -26,4 +26,4 @@ patches:
 images:
 - name: dekabitasp/mystok-gcp-app-prod
   newName: dekabitasp/mystok-gcp-app-prod
-  newTag: 20210217-1325 # {"$imagepolicy": "flux-system:mystok-gcp-flux-prod:tag"}
+  newTag: 20210217-1427 # {"$imagepolicy": "flux-system:mystok-gcp-flux-prod:tag"}
